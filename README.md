@@ -2,9 +2,9 @@
 
 <div align="center">
   <img src="assets/logo.svg" alt="Wescore Logo" width="200">
-</div>
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/2948d7bc-c617-4620-8b04-c8342ff54b33/deploy-status)](https://app.netlify.com/sites/wescore/deploys)
+  [![Netlify Status](https://api.netlify.com/api/v1/badges/2948d7bc-c617-4620-8b04-c8342ff54b33/deploy-status)](https://app.netlify.com/sites/wescore/deploys)
+</div>
 
 ## Overview
 
