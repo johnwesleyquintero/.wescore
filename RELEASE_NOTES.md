@@ -1,4 +1,4 @@
-# Wescore v1.0.0 Release Notes
+# Wescore v1.0.0: Comprehensive Code Quality Framework
 
 We're excited to announce the first stable release of Wescore, a comprehensive Code Quality Framework designed to maintain high standards in your codebase through automated checks and reporting.
 
