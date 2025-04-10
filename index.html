@@ -3,13 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wescore - Code Quality Framework</title>
+    <meta name="description" content="Wescore is a modern code quality framework integrating formatting, linting, type checking, and building into one seamless workflow.">
+    <title>Wescore - Modern Code Quality Framework</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <!-- Font Awesome for Icons (Example) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         :root {
             --primary-color: #4a90e2;
             --secondary-color: #2c3e50;
             --background-color: #f8f9fa;
             --text-color: #333;
+            --light-gray: #f4f4f4;
+            --card-background: #ffffff;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
 
         * {
@@ -18,99 +26,233 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+            line-height: 1.7;
             color: var(--text-color);
             background-color: var(--background-color);
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1100px; /* Slightly narrower for better readability on wide screens */
             margin: 0 auto;
-            padding: 2rem;
+            padding: 0 1.5rem; /* Add horizontal padding */
         }
 
         header {
             text-align: center;
-            padding: 4rem 0;
+            padding: 5rem 1.5rem; /* Increased padding */
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: white;
+            margin-bottom: 4rem; /* Space below header */
         }
 
         h1 {
-            font-size: 3rem;
+            font-size: 3.2rem;
             margin-bottom: 1rem;
+            font-weight: 600;
         }
 
         .subtitle {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--secondary-color);
         }
 
         .features {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin: 4rem 0;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjusted minmax */
+            gap: 2.5rem; /* Increased gap */
+            margin-bottom: 5rem; /* Space below features */
         }
 
         .feature {
-            padding: 2rem;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 2.5rem 2rem; /* Increased padding */
+            background: var(--card-background);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center; /* Center feature content */
         }
 
-        .download-section {
+        .feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+        }
+
+        .feature i { /* Icon styling */
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .feature h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+        }
+
+        .feature p {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        .get-wescore-section {
+            margin-bottom: 4rem;
+        }
+
+        .installation {
+            background: var(--card-background);
+            padding: 2.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            margin-bottom: 3rem; /* Space below installation */
             text-align: center;
-            padding: 4rem 0;
+        }
+
+        .installation h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--secondary-color);
+        }
+
+        .installation p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        pre {
+            background: var(--light-gray);
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            margin: 1.5rem auto; /* Center the block */
+            max-width: 500px; /* Limit width */
+            overflow-x: auto; /* Handle long lines */
+            text-align: left; /* Align code left */
+            white-space: pre;
+        }
+
+        code {
+            font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+            font-size: 0.95rem;
+            color: #d63384; /* Example color for code */
+        }
+
+        pre code {
+            background: none;
+            padding: 0;
+            color: var(--text-color); /* Reset color inside pre */
+            line-height: 1.5;
+        }
+
+        /* Inline code styling */
+        body p > code, body li > code {
+             background: var(--light-gray);
+             padding: 0.2em 0.4em;
+             margin: 0 0.1em;
+             border-radius: 3px;
+             font-size: 85%;
+        }
+
+
+        .download-links {
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+         .download-links h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--secondary-color);
         }
 
         .download-button {
             display: inline-block;
-            padding: 1rem 2rem;
-            margin: 1rem;
+            padding: 0.9rem 1.8rem; /* Slightly adjusted padding */
+            margin: 0.8rem;
             background-color: var(--primary-color);
             color: white;
             text-decoration: none;
-            border-radius: 4px;
-            transition: transform 0.2s;
+            border-radius: 6px; /* Slightly rounder */
+            transition: transform 0.2s ease, background-color 0.2s ease;
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
         }
 
         .download-button:hover {
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            background-color: #3a80d2; /* Darker shade on hover */
         }
 
-        .installation {
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            margin: 2rem 0;
+        .download-button.source { /* Optional: Style source button differently */
+             background-color: var(--secondary-color);
         }
-
-        code {
-            background: #f4f4f4;
-            padding: 0.2rem 0.4rem;
-            border-radius: 4px;
-            font-family: 'Courier New', Courier, monospace;
-        }
+         .download-button.source:hover {
+             background-color: #1c2a38;
+         }
 
         footer {
             text-align: center;
-            padding: 2rem;
+            padding: 2.5rem 1.5rem;
             background: var(--secondary-color);
+            color: rgba(255, 255, 255, 0.8); /* Slightly muted white */
+            margin-top: 5rem;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        footer a {
             color: white;
-            margin-top: 4rem;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        footer a:hover {
+            color: var(--primary-color);
+            text-decoration: underline;
         }
 
         @media (max-width: 768px) {
             .container {
-                padding: 1rem;
+                padding: 0 1rem;
             }
 
             h1 {
+                font-size: 2.5rem; /* Adjusted size */
+            }
+            .subtitle {
+                font-size: 1.1rem;
+            }
+            .section-title {
                 font-size: 2rem;
+            }
+            header {
+                padding: 4rem 1rem;
+            }
+            .features {
+                 gap: 1.5rem;
+            }
+             .feature {
+                 padding: 2rem 1.5rem;
+             }
+            pre {
+                padding: 1rem;
+                max-width: 90%; /* Allow more width on mobile */
             }
         }
     </style>
@@ -118,47 +260,61 @@
 <body>
     <header>
         <div class="container">
+            <img src="assets/logo.svg" alt="Wescore Logo" class="logo" style="width: 120px; height: 120px; margin-bottom: 1.5rem;">
             <h1>Wescore</h1>
             <p class="subtitle">A Modern Code Quality Framework</p>
         </div>
     </header>
 
     <main class="container">
+
         <section class="features">
-            <div class="feature">
+             <div class="feature">
+                <i class="fas fa-check-circle"></i>
                 <h2>Unified Quality Control</h2>
                 <p>Integrate formatting, linting, type checking, and building in one seamless workflow.</p>
             </div>
             <div class="feature">
+                <i class="fas fa-cogs"></i> 
                 <h2>Flexible Configuration</h2>
                 <p>Works with your existing tools - Prettier, ESLint, TypeScript, and more.</p>
             </div>
             <div class="feature">
+                <i class="fas fa-bug-slash"></i>
                 <h2>Smart Error Handling</h2>
                 <p>Intelligent error categorization and reporting for better debugging.</p>
             </div>
         </section>
 
-        <section class="download-section">
-            <h2>Download Wescore</h2>
-            <p>Choose your preferred version:</p>
-            <a href="https://github.com/johnwesleyquintero/.wescore/blob/main/dist/wescore-1.0.0.zip" class="download-button">Download Latest Release</a>
-            <a href="https://github.com/johnwesleyquintero/.wescore/blob/main/dist/wescore-source.zip" class="download-button">Download Source Code</a>
+        <section class="get-wescore-section">
+            <h2 class="section-title">Get Wescore</h2>
+
+            <div class="installation">
+                <h3>Quick Start (Recommended)</h3>
+                <p>Install Wescore using your preferred package manager:</p>
+                <pre><code>npm install wescore</code></pre>
+                <p>or</p>
+                <pre><code>yarn add wescore</code></pre>
+            </div>
+
+            <div class="download-links">
+                 <h3>Direct Downloads</h3>
+                 <p>Alternatively, download the files directly:</p>
+                 <a href="https://github.com/johnwesleyquintero/.wescore/blob/main/dist/wescore-1.0.0.zip" class="download-button">
+                     <i class="fas fa-download"></i> Download Latest Release
+                 </a>
+                 <a href="https://github.com/johnwesleyquintero/.wescore/blob/main/dist/wescore-source.zip" class="download-button source">
+                     <i class="fas fa-code-branch"></i> Download Source Code
+                 </a>
+            </div>
         </section>
 
-        <section class="installation">
-            <h2>Quick Start</h2>
-            <p>Install Wescore using your preferred package manager:</p>
-            <code>npm install wescore</code>
-            <p>or</p>
-            <code>yarn add wescore</code>
-        </section>
     </main>
 
     <footer>
         <div class="container">
             <p>© 2024 Wescore Contributors. Licensed under MIT.</p>
-            <p><a href="https://github.com/johnwesleyquintero/.wescore" style="color: white;">View on GitHub</a></p>
+            <p><a href="https://github.com/johnwesleyquintero/.wescore"><i class="fab fa-github"></i> View on GitHub</a></p>
         </div>
     </footer>
 </body>
