@@ -6,256 +6,10 @@
     <meta name="description" content="Wescore is a modern code quality framework integrating formatting, linting, type checking, and building into one seamless workflow.">
     <title>Wescore - Modern Code Quality Framework</title>
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-    <!-- Font Awesome for Icons (Example) -->
+    <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <style>
-        :root {
-            --primary-color: #4a90e2;
-            --secondary-color: #2c3e50;
-            --background-color: #f8f9fa;
-            --text-color: #333;
-            --light-gray: #f4f4f4;
-            --card-background: #ffffff;
-            --border-radius: 8px;
-            --box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-            line-height: 1.7;
-            color: var(--text-color);
-            background-color: var(--background-color);
-        }
-
-        .container {
-            max-width: 1100px; /* Slightly narrower for better readability on wide screens */
-            margin: 0 auto;
-            padding: 0 1.5rem; /* Add horizontal padding */
-        }
-
-        header {
-            text-align: center;
-            padding: 5rem 1.5rem; /* Increased padding */
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            margin-bottom: 4rem; /* Space below header */
-        }
-
-        h1 {
-            font-size: 3.2rem;
-            margin-bottom: 1rem;
-            font-weight: 600;
-        }
-
-        .subtitle {
-            font-size: 1.3rem;
-            opacity: 0.9;
-            font-weight: 300;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: var(--secondary-color);
-        }
-
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjusted minmax */
-            gap: 2.5rem; /* Increased gap */
-            margin-bottom: 5rem; /* Space below features */
-        }
-
-        .feature {
-            padding: 2.5rem 2rem; /* Increased padding */
-            background: var(--card-background);
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            text-align: center; /* Center feature content */
-        }
-
-        .feature:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
-        }
-
-        .feature i { /* Icon styling */
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            margin-bottom: 1.5rem;
-        }
-
-        .feature h2 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--secondary-color);
-        }
-
-        .feature p {
-            font-size: 1rem;
-            color: #555;
-        }
-
-        .get-wescore-section {
-            margin-bottom: 4rem;
-        }
-
-        .installation {
-            background: var(--card-background);
-            padding: 2.5rem;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-            margin-bottom: 3rem; /* Space below installation */
-            text-align: center;
-        }
-
-        .installation h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            color: var(--secondary-color);
-        }
-
-        .installation p {
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-        }
-
-        pre {
-            background: var(--light-gray);
-            border: 1px solid #ddd;
-            border-radius: var(--border-radius);
-            padding: 1.5rem;
-            margin: 1.5rem auto; /* Center the block */
-            max-width: 500px; /* Limit width */
-            overflow-x: auto; /* Handle long lines */
-            text-align: left; /* Align code left */
-            white-space: pre;
-        }
-
-        code {
-            font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
-            font-size: 0.95rem;
-            color: #d63384; /* Example color for code */
-        }
-
-        pre code {
-            background: none;
-            padding: 0;
-            color: var(--text-color); /* Reset color inside pre */
-            line-height: 1.5;
-        }
-
-        /* Inline code styling */
-        body p > code, body li > code {
-             background: var(--light-gray);
-             padding: 0.2em 0.4em;
-             margin: 0 0.1em;
-             border-radius: 3px;
-             font-size: 85%;
-        }
-
-
-        .download-links {
-            text-align: center;
-            padding: 3rem 0;
-        }
-
-         .download-links h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            color: var(--secondary-color);
-        }
-
-        .download-button {
-            display: inline-block;
-            padding: 0.9rem 1.8rem; /* Slightly adjusted padding */
-            margin: 0.8rem;
-            background-color: var(--primary-color);
-            color: white;
-            text-decoration: none;
-            border-radius: 6px; /* Slightly rounder */
-            transition: transform 0.2s ease, background-color 0.2s ease;
-            font-weight: 500;
-            border: none;
-            cursor: pointer;
-        }
-
-        .download-button:hover {
-            transform: translateY(-3px);
-            background-color: #3a80d2; /* Darker shade on hover */
-        }
-
-        .download-button.source { /* Optional: Style source button differently */
-             background-color: var(--secondary-color);
-        }
-         .download-button.source:hover {
-             background-color: #1c2a38;
-         }
-
-        footer {
-            text-align: center;
-            padding: 2.5rem 1.5rem;
-            background: var(--secondary-color);
-            color: rgba(255, 255, 255, 0.8); /* Slightly muted white */
-            margin-top: 5rem;
-        }
-
-        footer p {
-            margin-bottom: 0.5rem;
-        }
-
-        footer a {
-            color: white;
-            text-decoration: none;
-            transition: color 0.2s ease;
-        }
-
-        footer a:hover {
-            color: var(--primary-color);
-            text-decoration: underline;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 0 1rem;
-            }
-
-            h1 {
-                font-size: 2.5rem; /* Adjusted size */
-            }
-            .subtitle {
-                font-size: 1.1rem;
-            }
-            .section-title {
-                font-size: 2rem;
-            }
-            header {
-                padding: 4rem 1rem;
-            }
-            .features {
-                 gap: 1.5rem;
-            }
-             .feature {
-                 padding: 2rem 1.5rem;
-             }
-            pre {
-                padding: 1rem;
-                max-width: 90%; /* Allow more width on mobile */
-            }
-        }
-    </style>
+    <!-- Link to External Stylesheet -->
+    <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
     <header>
@@ -275,7 +29,7 @@
                 <p>Integrate formatting, linting, type checking, and building in one seamless workflow.</p>
             </div>
             <div class="feature">
-                <i class="fas fa-cogs"></i> 
+                <i class="fas fa-cogs"></i>
                 <h2>Flexible Configuration</h2>
                 <p>Works with your existing tools - Prettier, ESLint, TypeScript, and more.</p>
             </div>
@@ -286,27 +40,81 @@
             </div>
         </section>
 
-        <section class="get-wescore-section">
+        <!-- Renamed section for better semantic meaning -->
+        <section class="usage-section">
             <h2 class="section-title">Get Wescore</h2>
 
-            <div class="installation">
-                <h3>Quick Start (Recommended)</h3>
-                <p>Install Wescore using your preferred package manager:</p>
-                <pre><code>npm install wescore</code></pre>
-                <p>or</p>
-                <pre><code>yarn add wescore</code></pre>
-            </div>
+            <!-- Consolidated Installation Section -->
+            <section id="installation" class="installation">
+                <h3>Installation</h3>
+                <p>Install Wescore as a development dependency using your preferred package manager:</p>
+
+                <div class="package-manager-tabs">
+                    <button class="active" onclick="showInstall('npm')">npm</button>
+                    <button onclick="showInstall('yarn')">yarn</button>
+                    <button onclick="showInstall('pnpm')">pnpm</button>
+                    <button onclick="showInstall('bun')">bun</button>
+                </div>
+
+                <!-- Corrected Installation Commands -->
+                <div id="npm-install" class="install-command">
+                    <pre><code>npm install --save-dev wescore</code></pre>
+                </div>
+                <div id="yarn-install" class="install-command" style="display: none;">
+                    <pre><code>yarn add --dev wescore</code></pre>
+                </div>
+                <div id="pnpm-install" class="install-command" style="display: none;">
+                    <pre><code>pnpm add --save-dev wescore</code></pre>
+                </div>
+                <div id="bun-install" class="install-command" style="display: none;">
+                    <pre><code>bun add --dev wescore</code></pre>
+                </div>
+
+                <p style="margin-top: 2rem;">Ensure your project also has your chosen tools installed (peer dependencies):</p>
+                <ul>
+                    <li>Code formatter (e.g., Prettier)</li>
+                    <li>Linter (e.g., ESLint)</li>
+                    <li>Type checker (e.g., TypeScript, if applicable)</li>
+                    <li>Build tools (if applicable)</li>
+                </ul>
+            </section>
 
             <div class="download-links">
-                 <h3>Direct Downloads</h3>
-                 <p>Alternatively, download the files directly:</p>
-                 <a href="https://github.com/johnwesleyquintero/.wescore/blob/main/dist/wescore-1.0.0.zip" class="download-button">
-                     <i class="fas fa-download"></i> Download Latest Release
+                 <h3>Direct Downloads / Source Code</h3>
+                 <p>Download the latest release or source code directly:</p>
+                 <div class="download-buttons">
+                     <a href="dist/wescore-latest.zip" class="download-button">Download Latest Release</a>
+                     <a href="dist/wescore-source.zip" class="download-button">Download Source Code</a>
+                 </div>
+                     <i class="fas fa-download"></i> View Releases
                  </a>
-                 <a href="https://github.com/johnwesleyquintero/.wescore/blob/main/dist/wescore-source.zip" class="download-button source">
-                     <i class="fas fa-code-branch"></i> Download Source Code
+                 <a href="https://github.com/johnwesleyquintero/.wescore" target="_blank" rel="noopener noreferrer" class="download-button source">
+                     <i class="fas fa-code-branch"></i> View Source Code
                  </a>
             </div>
+
+            <script>
+                /**
+                 * Shows the installation command for the selected package manager
+                 * and updates the active state of the corresponding button.
+                 * @param {string} type - The package manager type (e.g., 'npm', 'yarn').
+                 */
+                function showInstall(type) {
+                    // Hide all install command blocks
+                    document.querySelectorAll('.install-command').forEach(el => el.style.display = 'none');
+                    // Show the selected install command block
+                    document.getElementById(`${type}-install`).style.display = 'block';
+
+                    // Remove 'active' class from all buttons
+                    document.querySelectorAll('.package-manager-tabs button').forEach(btn => btn.classList.remove('active'));
+                    // Add 'active' class to the clicked button
+                    document.querySelector(`button[onclick="showInstall('${type}')"]`).classList.add('active');
+                }
+
+                // Ensure the default ('npm') tab is shown on page load
+                // (It's already set in the HTML, but this reinforces it if needed)
+                // document.addEventListener('DOMContentLoaded', () => showInstall('npm'));
+            </script>
         </section>
 
     </main>
@@ -314,7 +122,7 @@
     <footer>
         <div class="container">
             <p>© 2024 Wescore Contributors. Licensed under MIT.</p>
-            <p><a href="https://github.com/johnwesleyquintero/.wescore"><i class="fab fa-github"></i> View on GitHub</a></p>
+            <p><a href="https://github.com/johnwesleyquintero/.wescore" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> View on GitHub</a></p>
         </div>
     </footer>
 </body>

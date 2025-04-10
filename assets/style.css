@@ -1,0 +1,320 @@
+/* style.css */
+:root {
+    --primary-color: #4a90e2;
+    --secondary-color: #2c3e50;
+    --background-color: #f8f9fa;
+    --text-color: #333;
+    --light-gray: #f4f4f4;
+    --card-background: #ffffff;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    line-height: 1.7;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+.container {
+    max-width: 1100px; /* Slightly narrower for better readability on wide screens */
+    margin: 0 auto;
+    padding: 0 1.5rem; /* Add horizontal padding */
+}
+
+header {
+    text-align: center;
+    padding: 5rem 1.5rem; /* Increased padding */
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    margin-bottom: 4rem; /* Space below header */
+}
+
+h1 {
+    font-size: 3.2rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.subtitle {
+    font-size: 1.3rem;
+    opacity: 0.9;
+    font-weight: 300;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--secondary-color);
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjusted minmax */
+    gap: 2.5rem; /* Increased gap */
+    margin-bottom: 5rem; /* Space below features */
+}
+
+.feature {
+    padding: 2.5rem 2rem; /* Increased padding */
+    background: var(--card-background);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center; /* Center feature content */
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+.feature i { /* Icon styling */
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.feature h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+}
+
+.feature p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Usage Section Styles (Container for Installation and Downloads) */
+.usage-section {
+    margin-bottom: 4rem;
+}
+
+/* Installation Section Styles */
+.installation {
+    background: var(--card-background);
+    padding: 2.5rem; /* Adjusted padding */
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    margin-bottom: 3rem; /* Space below installation */
+    text-align: center;
+}
+
+.installation h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: var(--secondary-color);
+}
+
+.installation p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.installation ul {
+    list-style: disc;
+    margin: 1rem auto 0; /* Center list */
+    padding-left: 20px; /* Indent list items */
+    max-width: 500px; /* Match pre width */
+    text-align: left; /* Align list text left */
+    color: #555;
+}
+
+.installation li {
+    margin-bottom: 0.5rem;
+}
+
+
+.installation pre {
+    background: var(--light-gray);
+    border: 1px solid #ddd; /* Added subtle border */
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    margin: 1.5rem auto; /* Center the block */
+    max-width: 500px; /* Limit width */
+    overflow-x: auto; /* Handle long lines */
+    text-align: left; /* Align code left */
+    white-space: pre;
+}
+
+.installation code {
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+    font-size: 0.95rem;
+    /* color: #d63384; /* Example color for code - removed as pre code resets it */
+}
+
+.installation pre code {
+    background: none;
+    padding: 0;
+    color: var(--text-color); /* Reset color inside pre */
+    line-height: 1.5;
+}
+
+/* Inline code styling (if used elsewhere) */
+body p > code, body li > code {
+     background: var(--light-gray);
+     padding: 0.2em 0.4em;
+     margin: 0 0.1em;
+     border-radius: 3px;
+     font-size: 85%;
+     color: #d63384; /* Keep color for inline code */
+}
+
+
+.package-manager-tabs {
+    display: flex;
+    justify-content: center; /* Center tabs */
+    gap: 1rem;
+    margin-bottom: 1.5rem; /* Increased space */
+}
+
+.package-manager-tabs button {
+    padding: 0.6rem 1.2rem; /* Slightly larger buttons */
+    border: 1px solid transparent; /* Prepare for potential border on hover/active */
+    background: var(--light-gray);
+    color: var(--secondary-color); /* Darker text for inactive */
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    font-weight: 500;
+}
+
+.package-manager-tabs button:hover {
+    background-color: #e9ecef; /* Slightly darker gray on hover */
+}
+
+.package-manager-tabs button.active {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.install-command {
+    /* Styles applied via JS (display: block/none) */
+}
+
+
+/* Download Links Section */
+.download-links {
+    text-align: center;
+    padding: 3rem 0;
+}
+
+ .download-links h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: var(--secondary-color);
+}
+
+.download-button {
+    display: inline-block;
+    padding: 0.9rem 1.8rem;
+    margin: 0.8rem;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+}
+
+.download-button:hover {
+    transform: translateY(-3px);
+    background-color: #3a80d2; /* Darker shade on hover */
+}
+
+.download-button i { /* Ensure icon spacing */
+    margin-right: 0.5rem;
+}
+
+.download-button.source { /* Optional: Style source button differently */
+     background-color: var(--secondary-color);
+}
+ .download-button.source:hover {
+     background-color: #1c2a38;
+ }
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+    background: var(--secondary-color);
+    color: rgba(255, 255, 255, 0.8); /* Slightly muted white */
+    margin-top: 5rem;
+}
+
+footer p {
+    margin-bottom: 0.5rem;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+footer a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+footer i { /* Ensure icon spacing */
+    margin-right: 0.3rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 1rem;
+    }
+
+    h1 {
+        font-size: 2.5rem; /* Adjusted size */
+    }
+    .subtitle {
+        font-size: 1.1rem;
+    }
+    .section-title {
+        font-size: 2rem;
+    }
+    header {
+        padding: 4rem 1rem;
+    }
+    .features {
+         gap: 1.5rem;
+    }
+     .feature {
+         padding: 2rem 1.5rem;
+     }
+    .installation {
+        padding: 2rem 1.5rem;
+    }
+    .installation pre {
+        padding: 1rem;
+        max-width: 90%; /* Allow more width on mobile */
+    }
+    .package-manager-tabs {
+        flex-wrap: wrap; /* Allow tabs to wrap on small screens */
+        justify-content: center;
+    }
+    .download-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}
+
