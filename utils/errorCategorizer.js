@@ -1,44 +1,22 @@
 import chalk from 'chalk';
 
 export function categorizeError(output, errorCategories) {
-  if (!output || typeof errorCategories !== 'object') return {};
-
-  const matches = [];
+  if (!output || !errorCategories) return {};
 
   for (const [categoryName, category] of Object.entries(errorCategories)) {
-    for (const pattern of category?.patterns || []) {
+    for (const pattern of category.patterns || []) {
       try {
-        const regexParts = pattern.match(/^\/(.*)\/([gimuy]*)$/);
-        if (!regexParts) {
-          console.warn(
-            chalk.yellow(`Invalid regex format: ${pattern}. Should be in /pattern/flags format`)
-          );
-          continue;
-        }
-
-        const regex = new RegExp(regexParts[1], regexParts[2]);
+        const regex = new RegExp(pattern, 'i');
         if (regex.test(output)) {
-          matches.push({
+          return {
             category: categoryName,
-            severity: category.severity || 'error',
             suggestion: category.suggestion,
-            pattern: regex,
-          });
+          };
         }
       } catch (e) {
-        console.warn(chalk.yellow(`Error processing pattern '${pattern}': ${e.message}`));
+        console.warn(chalk.yellow(`Invalid regex pattern: ${pattern}`));
       }
     }
   }
-
-  if (matches.length > 0) {
-    const exactMatch = matches.find(m => m.pattern.test(output)) || matches[0];
-    return {
-      category: exactMatch.category,
-      severity: exactMatch.severity,
-      suggestion: exactMatch.suggestion,
-    };
-  }
-
   return {};
 }

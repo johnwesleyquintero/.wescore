@@ -1,13 +1,10 @@
-import { fileURLToPath } from 'url';
 import fs from 'fs';
 import path from 'path';
 import chalk from 'chalk';
 import { z } from 'zod';
 import { ConfigSchema, DEFAULT_COMMANDS_CONFIG, DEFAULT_COMMAND_TIMEOUT_MS } from './schema.js';
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const projectRoot = path.resolve(__dirname, '../..');
-const CONFIG_FILE_PATH = path.join(projectRoot, '.code-quality.json');
+const CONFIG_FILE_PATH = path.resolve('.code-quality.json');
 
 export async function loadConfig() {
   let loadedConfig = {};
