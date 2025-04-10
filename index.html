@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wescore - Code Quality Framework</title>
+    <style>
+        :root {
+            --primary-color: #4a90e2;
+            --secondary-color: #2c3e50;
+            --background-color: #f8f9fa;
+            --text-color: #333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            text-align: center;
+            padding: 4rem 0;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+
+        .feature {
+            padding: 2rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .download-section {
+            text-align: center;
+            padding: 4rem 0;
+        }
+
+        .download-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            margin: 1rem;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: transform 0.2s;
+        }
+
+        .download-button:hover {
+            transform: translateY(-2px);
+        }
+
+        .installation {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        code {
+            background: #f4f4f4;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: var(--secondary-color);
+            color: white;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Wescore</h1>
+            <p class="subtitle">A Modern Code Quality Framework</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="features">
+            <div class="feature">
+                <h2>Unified Quality Control</h2>
+                <p>Integrate formatting, linting, type checking, and building in one seamless workflow.</p>
+            </div>
+            <div class="feature">
+                <h2>Flexible Configuration</h2>
+                <p>Works with your existing tools - Prettier, ESLint, TypeScript, and more.</p>
+            </div>
+            <div class="feature">
+                <h2>Smart Error Handling</h2>
+                <p>Intelligent error categorization and reporting for better debugging.</p>
+            </div>
+        </section>
+
+        <section class="download-section">
+            <h2>Download Wescore</h2>
+            <p>Choose your preferred version:</p>
+            <a href="dist/wescore-latest.zip" class="download-button">Download Latest Release</a>
+            <a href="dist/wescore-source.zip" class="download-button">Download Source Code</a>
+        </section>
+
+        <section class="installation">
+            <h2>Quick Start</h2>
+            <p>Install Wescore using your preferred package manager:</p>
+            <code>npm install wescore</code>
+            <p>or</p>
+            <code>yarn add wescore</code>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2024 Wescore Contributors. Licensed under MIT.</p>
+            <p><a href="https://github.com/wescore" style="color: white;">View on GitHub</a></p>
+        </div>
+    </footer>
+</body>
+</html>
