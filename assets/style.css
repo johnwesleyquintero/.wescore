@@ -10,6 +10,7 @@
     --box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
+/* Global Resets & Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -33,12 +34,20 @@ body {
     padding: 0 1.5rem; /* Add horizontal padding */
 }
 
+/* Header Section */
 header {
     text-align: center;
     padding: 5rem 1.5rem; /* Increased padding */
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: white;
     margin-bottom: 4rem; /* Space below header */
+}
+
+.logo {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 1.5rem;
+    /* Add any other logo-specific styles here if needed */
 }
 
 h1 {
@@ -60,6 +69,7 @@ h1 {
     color: var(--secondary-color);
 }
 
+/* Features Section */
 .features {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjusted minmax */
@@ -98,12 +108,12 @@ h1 {
     color: #555;
 }
 
-/* Usage Section Styles (Container for Installation and Downloads) */
+/* Usage Section (Container for Installation and Downloads) */
 .usage-section {
     margin-bottom: 4rem;
 }
 
-/* Installation Section Styles */
+/* Installation Section */
 .installation {
     background: var(--card-background);
     padding: 2.5rem; /* Adjusted padding */
@@ -136,7 +146,6 @@ h1 {
 .installation li {
     margin-bottom: 0.5rem;
 }
-
 
 .installation pre {
     background: var(--light-gray);
@@ -173,7 +182,6 @@ body p > code, body li > code {
      color: #d63384; /* Keep color for inline code */
 }
 
-
 .package-manager-tabs {
     display: flex;
     justify-content: center; /* Center tabs */
@@ -206,23 +214,27 @@ body p > code, body li > code {
     /* Styles applied via JS (display: block/none) */
 }
 
-
 /* Download Links Section */
 .download-links {
     text-align: center;
-    padding: 3rem 0;
+    padding: 3rem 0; /* Padding for the overall section */
 }
 
- .download-links h3 {
+.download-links h3 {
     font-size: 1.8rem;
     margin-bottom: 1.5rem;
     color: var(--secondary-color);
 }
 
+/* Container for groups of download buttons */
+.download-buttons {
+    margin-bottom: 1rem; /* Add space below each group of buttons */
+}
+/* Individual download buttons */
 .download-button {
     display: inline-block;
     padding: 0.9rem 1.8rem;
-    margin: 0.8rem;
+    margin: 0.5rem; /* Adjusted margin for spacing between buttons */
     background-color: var(--primary-color);
     color: white;
     text-decoration: none;
@@ -245,11 +257,12 @@ body p > code, body li > code {
 .download-button.source { /* Optional: Style source button differently */
      background-color: var(--secondary-color);
 }
- .download-button.source:hover {
+
+.download-button.source:hover {
      background-color: #1c2a38;
  }
 
-/* Footer */
+/* Footer Section */
 footer {
     text-align: center;
     padding: 2.5rem 1.5rem;
@@ -315,6 +328,9 @@ footer i { /* Ensure icon spacing */
     .download-button {
         padding: 0.8rem 1.5rem;
         font-size: 0.9rem;
+        margin: 0.5rem; /* Ensure consistent margin on mobile */
+    }
+    .download-buttons {
+        margin-bottom: 0.5rem; /* Reduce space between button groups on mobile */
     }
 }
-

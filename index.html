@@ -14,7 +14,8 @@
 <body>
     <header>
         <div class="container">
-            <img src="assets/logo.svg" alt="Wescore Logo" class="logo" style="width: 120px; height: 120px; margin-bottom: 1.5rem;">
+            <!-- Removed inline style - Add to style.css -->
+            <img src="assets/logo.svg" alt="Wescore Logo" class="logo">
             <h1>Wescore</h1>
             <p class="subtitle">A Modern Code Quality Framework</p>
         </div>
@@ -79,18 +80,32 @@
                 </ul>
             </section>
 
+            <!-- Restructured Download Links Section -->
             <div class="download-links">
                  <h3>Direct Downloads / Source Code</h3>
-                 <p>Download the latest release or source code directly:</p>
+                 <p>Download pre-packaged archives directly:</p>
                  <div class="download-buttons">
-                     <a href="dist/wescore-latest.zip" class="download-button">Download Latest Release</a>
-                     <a href="dist/wescore-source.zip" class="download-button">Download Source Code</a>
+                     <!-- Assuming these point to actual files you provide -->
+                     <a href="dist/wescore-latest.zip" class="download-button" download>
+                         <i class="fas fa-file-archive"></i> Download Latest Release (.zip)
+                     </a>
+                     <a href="dist/wescore-source.zip" class="download-button source" download>
+                         <i class="fas fa-file-code"></i> Download Source Code (.zip)
+                     </a>
                  </div>
-                     <i class="fas fa-download"></i> View Releases
-                 </a>
-                 <a href="https://github.com/johnwesleyquintero/.wescore" target="_blank" rel="noopener noreferrer" class="download-button source">
-                     <i class="fas fa-code-branch"></i> View Source Code
-                 </a>
+
+                 <p style="margin-top: 2rem;">Alternatively, visit our GitHub repository:</p>
+                 <div class="download-buttons">
+                     <!-- Link to GitHub Releases page -->
+                     <a href="https://github.com/johnwesleyquintero/.wescore/releases" target="_blank" rel="noopener noreferrer" class="download-button">
+                         <i class="fas fa-box-open"></i> View Releases on GitHub
+                     </a>
+                     <!-- Link to GitHub Repository main page -->
+                     <a href="https://github.com/johnwesleyquintero/.wescore" target="_blank" rel="noopener noreferrer" class="download-button source">
+                         <i class="fab fa-github"></i> View Source on GitHub
+                     </a>
+                 </div>
+                 <!-- Removed stray </a> and orphaned text/icon from here -->
             </div>
 
             <script>
