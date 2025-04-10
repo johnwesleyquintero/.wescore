@@ -32,7 +32,12 @@ Before implementing the framework, ensure your development environment meets the
 
 ## Installation
 
-1. Install required dependencies:
+1. Download the latest release zip file from our releases:
+   - Go to the `dist` directory
+   - Download `wescore-latest.zip`
+   - Extract the contents into your project directory
+
+2. Install required dependencies:
 
 ```bash
 npm install --save-dev chalk zod
@@ -44,7 +49,7 @@ pnpm add --save-dev chalk zod
 bun add --dev chalk zod
 ```
 
-2. Ensure your project's formatter, linter, type checker, and build tool are installed as development dependencies.
+3. Ensure your project's formatter, linter, type checker, and build tool are installed as development dependencies.
 
 ## Project Structure
 

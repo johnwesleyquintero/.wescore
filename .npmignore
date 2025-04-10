@@ -1,0 +1,44 @@
+# Development files
+.gitignore
+.wescore.json
+.eslintrc*
+.prettierrc*
+.editorconfig
+
+# Documentation
+docs/
+CODE_OF_CONDUCT.md
+CONTRIBUTING.md
+
+# Source control
+.git/
+.github/
+
+# Build outputs
+dist/
+
+# Test files
+tests/
+__tests__/
+*.test.js
+*.spec.js
+
+# Assets and static files
+assets/
+netlify.toml
+
+# IDE and editor files
+.vscode/
+.idea/
+*.sublime-*
+
+# Logs and temporary files
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS generated files
+.DS_Store
+Thumbs.db
