@@ -1,3 +1,15 @@
+# Wescore v1.1.0: Enhanced Code Quality Framework
+
+## What's New
+- Added new validation rules for TypeScript projects
+- Improved error reporting with detailed categorization
+- Enhanced documentation for common configuration scenarios
+- Added comprehensive logging system for tracking quality check results
+
+## Breaking Changes
+- Updated minimum Node.js version requirement to 18.x
+- Removed deprecated configuration options
+
 # Wescore v1.0.0: Comprehensive Code Quality Framework
 
 We're excited to announce the first stable release of Wescore, a comprehensive Code Quality Framework designed to maintain high standards in your codebase through automated checks and reporting.

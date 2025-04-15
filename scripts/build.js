@@ -18,11 +18,10 @@ const filesToInclude = [
   "main.js",
   "config/loader.js",
   "config/schema.js",
-  "reporting/reporter.js",
   "runner/commandRunner.js",
-  "utils/errorCategorizer.js",
   "LICENSE",
   "README.md",
+  "RELEASE_NOTES.md",
 ];
 
 // Create release zip
@@ -72,12 +71,12 @@ function createZip(version) {
 }
 
 // Get version from package.json or use 'latest'
-let version = "latest";
+let version = "1.1.0";
 try {
   const packageJson = require("../package.json");
   version = packageJson.version;
 } catch (error) {
-  console.warn('Could not read package.json, using "latest" as version');
+  console.warn('Could not read package.json, using "1.1.0" as version');
 }
 
 // Create both release and source code zips
