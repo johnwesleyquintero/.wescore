@@ -53,7 +53,7 @@ The framework executes configured checks sequentially or in parallel. When check
 ## Project Structure
 
 The framework resides within the `.wescore` directory:
-
+```
 .wescore/
 ├── config/
 │   ├── loader.js  # Configuration loading and validation logic
@@ -65,7 +65,7 @@ The framework resides within the `.wescore` directory:
 ├── utils/ # (Potentially removed/refactored if errorCategorizer.js is unused)
 │   └── errorCategorizer.js  # (Legacy categorization, main logic now in main.js)
 └── main.js  # Main script: orchestrates checks, logging, and error parsing
-
+```
 *(Note: Review if `reporting/reporter.js` and `utils/errorCategorizer.js` are still used or if their logic is fully integrated into `main.js`. Update structure if needed.)*
 
 ## Configuration (`.wescore.json`)
