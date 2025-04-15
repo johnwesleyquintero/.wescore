@@ -1,0 +1,58 @@
+{
+  "runInParallel": false,
+  "stopOnFail": false,
+  "commandTimeout": 300000,
+  "logLevel": "info",
+  "checks": [
+    {
+      "id": "format",
+      "name": "Formatting (Prettier)",
+      "command": "npm run format"
+    },
+    {
+      "id": "lint",
+      "name": "Linting (ESLint)",
+      "command": "npm run lint"
+    },
+    {
+      "id": "typecheck",
+      "name": "Type Checking (TSC)",
+      "command": "npx tsc --noEmit",
+      "description": "Performs static type checking using TypeScript Compiler"
+    },
+    {
+      "id": "build",
+      "name": "Build Project",
+      "command": "npm run build"
+    }
+  ],
+  "errorCategories": {
+    "format": {
+      "patterns": ["SyntaxError:", "\\[error\\]", "Parsing error:"],
+      "suggestion": "Run 'npm run format' to fix Prettier formatting issues or check for syntax errors"
+    },
+    "lint": {
+      "patterns": [
+        "^\\s*\\d+:\\d+\\s+Error:",
+        "^\\./.*?:$",
+        "Parsing error:",
+        "@typescript-eslint/"
+      ],
+      "suggestion": "Run 'npm run lint -- --fix' to potentially auto-fix ESLint issues or review the reported errors"
+    },
+    "typecheck": {
+      "patterns": ["^.*?\\.tsx?\\(\\d+,\\d+\\): error TS\\d+:.*$"],
+      "suggestion": "Check type annotations and verify TS configurations"
+    },
+    "build": {
+      "patterns": [
+        "Failed to compile",
+        "Build failed",
+        "Syntax Error",
+        "Error:.*?Expected",
+        "error TS\\d+:"
+      ],
+      "suggestion": "Check the build output for compilation errors, often related to syntax or type issues"
+    }
+  }
+}
